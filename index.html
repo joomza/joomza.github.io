@@ -3,7 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zain Ul-Abdeen Rana - Senior Software Engineer</title>
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Zain Ul-Abdeen Rana - Senior Software Engineer & Full Stack Developer
+    </title>
+    <meta
+      name="title"
+      content="Zain Ul-Abdeen Rana - Senior Software Engineer & Full Stack Developer"
+    />
+    <meta
+      name="description"
+      content="Senior Software Engineer with 13+ years experience in PHP, Laravel, Node.js, React, and Vue.js. Specializing in web applications, CRM systems, and custom software solutions."
+    />
+    <meta
+      name="keywords"
+      content="software engineer, full stack developer, PHP developer, Laravel expert, Node.js developer, React developer, Vue.js developer, web application development, CRM systems, custom software solutions"
+    />
+    <meta name="author" content="Zain Ul-Abdeen Rana" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://joomza.github.io/" />
+    <meta
+      property="og:title"
+      content="Zain Ul-Abdeen Rana - Senior Software Engineer & Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Senior Software Engineer with 13+ years experience in PHP, Laravel, Node.js, React, and Vue.js. Specializing in web applications, CRM systems, and custom software solutions."
+    />
+    <meta property="og:image" content="https://joomza.github.io/profile.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://joomza.github.io/" />
+    <meta
+      property="twitter:title"
+      content="Zain Ul-Abdeen Rana - Senior Software Engineer & Full Stack Developer"
+    />
+    <meta
+      property="twitter:description"
+      content="Senior Software Engineer with 13+ years experience in PHP, Laravel, Node.js, React, and Vue.js. Specializing in web applications, CRM systems, and custom software solutions."
+    />
+    <meta
+      property="twitter:image"
+      content="https://joomza.github.io/profile.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://joomza.github.io/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zain Ul-Abdeen Rana",
+        "jobTitle": "Senior Software Engineer",
+        "url": "https://joomza.github.io/",
+        "sameAs": ["https://www.linkedin.com/in/zain-ul-abdeen-a640aa166/"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "JITEx Complete Logistics Solutions"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Punjab University"
+        },
+        "knowsAbout": [
+          "PHP",
+          "Laravel",
+          "Node.js",
+          "React",
+          "Vue.js",
+          "JavaScript",
+          "MySQL",
+          "AWS",
+          "Docker",
+          "REST APIs"
+        ],
+        "description": "Senior Software Engineer with 13+ years experience in web development and software engineering",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "postalCode": "05450",
+          "addressCountry": "PK"
+        },
+        "email": "mailto:joomlogic@gmail.com",
+        "telephone": "+92-300-7478863"
+      }
+    </script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -1426,11 +1521,55 @@
             const subject = document.getElementById("subject").value;
             const message = document.getElementById("message").value;
 
-            // In a real application, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(
-              `Thank you for your message, ${name}! I'll get back to you soon.`,
-            );
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+              alert("Please fill in all fields.");
+              return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              alert("Please enter a valid email address.");
+              return;
+            }
+
+            try {
+              // Show loading state
+              const submitBtn = contactForm.querySelector("button[type='submit']");
+              const originalText = submitBtn.textContent;
+              submitBtn.disabled = true;
+              submitBtn.textContent = "Sending...";
+
+              // Send data to server
+              const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, subject, message }),
+              });
+
+              if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+              }
+
+              const data = await response.json();
+
+              // Success message
+              alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+              contactForm.reset();
+            } catch (error) {
+              console.error("Form submission error:", error);
+              alert(
+                "There was an error sending your message. Please try again later."
+              );
+            } finally {
+              // Restore button state
+              const submitBtn = contactForm.querySelector("button[type='submit']");
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            }
 
             // Reset form
             contactForm.reset();
