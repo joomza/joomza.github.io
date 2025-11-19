@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
+    <title>Zain Ul-Abdeen Rana - Software Engineer</title>
     <style>
         * {
             margin: 0;
@@ -15,137 +15,248 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             background: white;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 20px;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            color: #0066cc;
+            font-size: 2.8em;
             margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .title {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
             font-size: 0.95em;
-            color: #666;
+            opacity: 0.9;
         }
         
         .contact-info a {
-            color: #0066cc;
+            color: white;
             text-decoration: none;
+            transition: opacity 0.3s;
         }
         
         .contact-info a:hover {
+            opacity: 0.8;
             text-decoration: underline;
         }
         
+        .content {
+            padding: 40px;
+        }
+        
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         
         .section-title {
-            font-size: 1.5em;
-            color: #0066cc;
-            margin-bottom: 15px;
-            font-weight: bold;
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 8px;
-        }
-        
-        .job, .education, .project {
+            font-size: 1.6em;
+            color: #667eea;
             margin-bottom: 20px;
-            padding-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
         
-        .job:not(:last-child),
-        .education:not(:last-child),
-        .project:not(:last-child) {
+        .summary {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 5px solid #667eea;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
         
-        .job-title, .school, .project-name {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #222;
+        .job:last-child {
+            border-bottom: none;
         }
         
-        .company, .degree, .project-tech {
-            color: #0066cc;
+        .job-title {
+            font-weight: bold;
+            font-size: 1.15em;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            color: #667eea;
             font-size: 0.95em;
+            font-weight: 500;
+            margin-bottom: 5px;
         }
         
         .date {
             color: #999;
             font-size: 0.9em;
             font-style: italic;
+            margin-bottom: 10px;
         }
         
-        .description {
-            margin-top: 8px;
-            color: #555;
-            line-height: 1.7;
+        .job-description {
+            margin-top: 10px;
+            color: #666;
         }
         
-        ul {
+        .job-description ul {
             margin-left: 20px;
             margin-top: 8px;
         }
         
-        li {
+        .job-description li {
             margin-bottom: 6px;
+            line-height: 1.6;
         }
         
-        .skills-grid {
+        .education {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .school {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .university {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .degree-detail {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category-title {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .expertise-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
         
-        .skill-category {
-            background: #f9f9f9;
-            padding: 12px;
-            border-radius: 4px;
-            border-left: 4px solid #0066cc;
+        .expertise-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-align: center;
         }
         
-        .skill-category strong {
-            color: #0066cc;
-            display: block;
-            margin-bottom: 6px;
+        .certifications {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
         }
         
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 25px;
+        .certifications ul {
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        .certifications li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
             }
             
             .header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+            }
+            
+            .title {
+                font-size: 1.1em;
+            }
+            
+            .content {
+                padding: 20px;
             }
             
             .contact-info {
-                flex-direction: column;
-                gap: 8px;
+                gap: 15px;
+                font-size: 0.85em;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -154,117 +265,216 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>Your Name</h1>
+            <h1>Zain Ul-Abdeen Rana</h1>
+            <div class="title">Senior Software Engineer</div>
             <div class="contact-info">
-                <span>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></span>
-                <span>📱 (123) 456-7890</span>
-                <span>📍 City, State</span>
-                <span><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></span>
-                <span><a href="https://github.com/yourprofile">GitHub</a></span>
+                <span>📧 <a href="mailto:joomlogic@gmail.com">joomlogic@gmail.com</a></span>
+                <span>📱 +92-300-7478863</span>
+                <span>📍 Gujranwala, PB 52250</span>
+                <span><a href="https://www.linkedin.com/in/zain-ul-abdeen-a640aa166/" target="_blank">LinkedIn</a></span>
             </div>
         </div>
 
-        <!-- Professional Summary -->
-        <div class="section">
-            <div class="section-title">Professional Summary</div>
-            <p>Brief overview of your professional background, key skills, and career objectives. Customize this to highlight what makes you unique as a candidate.</p>
-        </div>
+        <div class="content">
+            <!-- Professional Summary -->
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="summary">
+                    Software development professional with comprehensive background in building scalable, high-quality software applications. Known for delivering impactful projects and driving continuous improvement. Team-oriented and results-driven, with strong ability to adapt to changing requirements and priorities. Proficient in programming languages and software development methodologies.
+                </div>
+            </div>
 
-        <!-- Experience -->
-        <div class="section">
-            <div class="section-title">Experience</div>
-            
-            <div class="job">
-                <div class="job-title">Job Title</div>
-                <div class="company">Company Name</div>
-                <div class="date">Month Year – Present</div>
-                <div class="description">
+            <!-- Experience -->
+            <div class="section">
+                <div class="section-title">Professional Experience</div>
+                
+                <div class="job">
+                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="company">JITEx Complete Logistics Solutions, Remote</div>
+                    <div class="date">January 2019 - November 2025</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Led development of scalable software solutions, enhancing system performance and user experience</li>
+                            <li>Mentored junior programmers, fostering skill development and knowledge sharing within team</li>
+                            <li>Spearheaded integration of new technologies, improving workflow efficiency and reducing downtime</li>
+                            <li>Designed and implemented automated testing frameworks, increasing code quality and reliability</li>
+                            <li>Led development of scalable web applications using JavaScript frameworks and cloud technologies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="company">leadpops inc, San Diego, CA, USA</div>
+                    <div class="date">January 2017 - September 2023</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Developed RESTful APIs to enhance integration with third-party services and tools</li>
+                            <li>Developed scalable applications using agile methodologies for timely project delivery</li>
+                            <li>Managed multiple projects simultaneously while maintaining strict deadlines and high-quality standards</li>
+                            <li>Built cutting edge tools and applications to meet strategic business goals</li>
+                            <li>Collaborated with cross-functional teams to define project scope and deliverables</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="company">Crucible, Lahore, Pakistan</div>
+                    <div class="date">January 2014 - January 2016</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Built databases and table structures for web applications</li>
+                            <li>Created web-based dashboards and reporting tools for data visualization</li>
+                            <li>Integrated new software with existing systems and third-party APIs</li>
+                            <li>Developed robust, scalable, modular and API-centric infrastructures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-title">Software Engineer</div>
+                    <div class="company">Buruj Solutions, Gujranwala, Pakistan</div>
+                    <div class="date">January 2010 - January 2014</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Liaised with business management team to gather enhancement requirements and prepare design specification using UML</li>
+                            <li>Involved in developing proof of concept project for migrating to microservices architecture</li>
+                            <li>Development of AJAX user interface using HTML 5, CSS, Jquery, JS and Spring MVC server interaction</li>
+                            <li>Designed and implemented scalable applications for data extraction and analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education">
+                    <div class="school">BS in Computer Science</div>
+                    <div class="university">Punjab University, Lahore, Pakistan</div>
+                    <div class="degree-detail">Graduated: September 2010 | GPA: 3.1/4.0 | Degree Awarded with Honors</div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-category-title">Frontend Frameworks</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">Vue</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">jQuery</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Backend Technologies</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">CodeIgniter</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Languages & Scripting</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Databases & Data</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">JSON</span>
+                            <span class="skill-tag">XML</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">DevOps & Tools</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Cloud & APIs</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">SOAP</span>
+                            <span class="skill-tag">Google Maps API</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">CMS & Frameworks</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">Joomla</span>
+                            <span class="skill-tag">Yii</span>
+                            <span class="skill-tag">Zend</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-category-title">Methodologies</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">SaaS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry Expertise -->
+            <div class="section">
+                <div class="section-title">Industry Expertise</div>
+                <div class="expertise-grid">
+                    <div class="expertise-item">Teamwork & Communication</div>
+                    <div class="expertise-item">Problem Solving</div>
+                    <div class="expertise-item">Analytical Thinking</div>
+                    <div class="expertise-item">Project Leadership</div>
+                    <div class="expertise-item">Database Design</div>
+                    <div class="expertise-item">API Development</div>
+                    <div class="expertise-item">Agile Expert</div>
+                    <div class="expertise-item">Software Architecture</div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                <div class="certifications">
                     <ul>
-                        <li>Achievement or responsibility with measurable impact</li>
-                        <li>Key project or initiative you led or contributed to</li>
-                        <li>Skill demonstrated or developed in this role</li>
+                        <li><strong>Linux Training</strong> - 2010</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="job">
-                <div class="job-title">Previous Job Title</div>
-                <div class="company">Previous Company</div>
-                <div class="date">Month Year – Month Year</div>
-                <div class="description">
-                    <ul>
-                        <li>Key accomplishment or responsibility</li>
-                        <li>Important project or contribution</li>
-                    </ul>
+            <!-- Languages -->
+            <div class="section">
+                <div class="section-title">Languages</div>
+                <div class="expertise-grid">
+                    <div class="expertise-item">English - Fluent</div>
                 </div>
             </div>
-        </div>
-
-        <!-- Education -->
-        <div class="section">
-            <div class="section-title">Education</div>
-            
-            <div class="education">
-                <div class="school">Degree Name (e.g., Bachelor of Science in Computer Science)</div>
-                <div class="degree">University Name</div>
-                <div class="date">Graduated: Month Year</div>
-                <div class="description">GPA: 3.8 | Relevant coursework: Course 1, Course 2, Course 3</div>
-            </div>
-        </div>
-
-        <!-- Skills -->
-        <div class="section">
-            <div class="section-title">Skills</div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <strong>Programming</strong>
-                    Python, JavaScript, Java, C++
-                </div>
-                <div class="skill-category">
-                    <strong>Tools & Frameworks</strong>
-                    React, Node.js, Git, Docker
-                </div>
-                <div class="skill-category">
-                    <strong>Other Skills</strong>
-                    Leadership, Project Management, Communication
-                </div>
-                <div class="skill-category">
-                    <strong>Languages</strong>
-                    English (Native), Spanish (Fluent)
-                </div>
-            </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="section">
-            <div class="section-title">Projects</div>
-            
-            <div class="project">
-                <div class="project-name">Project Name</div>
-                <div class="project-tech">Technologies: JavaScript, React, Node.js</div>
-                <div class="date">Month Year</div>
-                <div class="description">
-                    Brief description of the project and its impact. Mention what you built, the problem it solved, and any notable results or features.
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-name">Another Project</div>
-                <div class="project-tech">Technologies: Python, Flask, PostgreSQL</div>
-                <div class="date">Month Year</div>
-                <div class="description">
-                    Description of what you built and key accomplishments. Include links to GitHub or live demo if available.
-                </div>
-            </div>
-        </div>
-
-        <!-- Certifications -->
-        <div class="section">
-            <div class="section-title">Certifications & Awards</div>
-            <ul>
-                <li><strong>Certification Name</strong> – Issuing Organization, Year</li>
-                <li><strong>Award Name</strong> – Organization, Year</li>
-            </ul>
         </div>
     </div>
 </body>
