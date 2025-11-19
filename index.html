@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            color: #666;
+        }
+        
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 8px;
+        }
+        
+        .job, .education, .project {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+        }
+        
+        .job:not(:last-child),
+        .education:not(:last-child),
+        .project:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .job-title, .school, .project-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222;
+        }
+        
+        .company, .degree, .project-tech {
+            color: #0066cc;
+            font-size: 0.95em;
+        }
+        
+        .date {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        
+        .description {
+            margin-top: 8px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .skill-category strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Your Name</h1>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:your.email@example.com">your.email@example.com</a></span>
+                <span>📱 (123) 456-7890</span>
+                <span>📍 City, State</span>
+                <span><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></span>
+                <span><a href="https://github.com/yourprofile">GitHub</a></span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p>Brief overview of your professional background, key skills, and career objectives. Customize this to highlight what makes you unique as a candidate.</p>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <div class="section-title">Experience</div>
+            
+            <div class="job">
+                <div class="job-title">Job Title</div>
+                <div class="company">Company Name</div>
+                <div class="date">Month Year – Present</div>
+                <div class="description">
+                    <ul>
+                        <li>Achievement or responsibility with measurable impact</li>
+                        <li>Key project or initiative you led or contributed to</li>
+                        <li>Skill demonstrated or developed in this role</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Previous Job Title</div>
+                <div class="company">Previous Company</div>
+                <div class="date">Month Year – Month Year</div>
+                <div class="description">
+                    <ul>
+                        <li>Key accomplishment or responsibility</li>
+                        <li>Important project or contribution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="education">
+                <div class="school">Degree Name (e.g., Bachelor of Science in Computer Science)</div>
+                <div class="degree">University Name</div>
+                <div class="date">Graduated: Month Year</div>
+                <div class="description">GPA: 3.8 | Relevant coursework: Course 1, Course 2, Course 3</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Programming</strong>
+                    Python, JavaScript, Java, C++
+                </div>
+                <div class="skill-category">
+                    <strong>Tools & Frameworks</strong>
+                    React, Node.js, Git, Docker
+                </div>
+                <div class="skill-category">
+                    <strong>Other Skills</strong>
+                    Leadership, Project Management, Communication
+                </div>
+                <div class="skill-category">
+                    <strong>Languages</strong>
+                    English (Native), Spanish (Fluent)
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="project">
+                <div class="project-name">Project Name</div>
+                <div class="project-tech">Technologies: JavaScript, React, Node.js</div>
+                <div class="date">Month Year</div>
+                <div class="description">
+                    Brief description of the project and its impact. Mention what you built, the problem it solved, and any notable results or features.
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-name">Another Project</div>
+                <div class="project-tech">Technologies: Python, Flask, PostgreSQL</div>
+                <div class="date">Month Year</div>
+                <div class="description">
+                    Description of what you built and key accomplishments. Include links to GitHub or live demo if available.
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <div class="section-title">Certifications & Awards</div>
+            <ul>
+                <li><strong>Certification Name</strong> – Issuing Organization, Year</li>
+                <li><strong>Award Name</strong> – Organization, Year</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
