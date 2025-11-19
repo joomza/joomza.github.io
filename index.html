@@ -3,37 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zain Ul-Abdeen Rana - Software Engineer</title>
+    <title>Zain Ul-Abdeen Rana - Senior Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --success: #28a745;
+            --border-radius: 10px;
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             min-height: 100vh;
-            padding: 20px 0;
         }
         
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
             overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 50px 40px;
             text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgzMCkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
         }
         
         .profile-pic {
@@ -45,12 +74,16 @@
             display: block;
             object-fit: cover;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
         }
         
         .header h1 {
             font-size: 2.8em;
             margin-bottom: 10px;
             font-weight: bold;
+            position: relative;
+            z-index: 1;
         }
         
         .title {
@@ -58,6 +91,8 @@
             opacity: 0.95;
             margin-bottom: 20px;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-info {
@@ -67,17 +102,22 @@
             flex-wrap: wrap;
             font-size: 0.95em;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-info a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .contact-info a:hover {
             opacity: 0.8;
-            text-decoration: underline;
+            transform: translateY(-2px);
         }
         
         .content {
@@ -85,53 +125,69 @@
         }
         
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+            scroll-margin-top: 20px;
         }
         
         .section-title {
             font-size: 1.6em;
-            color: #667eea;
+            color: var(--primary);
             margin-bottom: 20px;
             font-weight: bold;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid var(--primary);
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            font-size: 1.2em;
         }
         
         .summary {
-            background: #f8f9fa;
+            background: var(--light);
             padding: 20px;
-            border-radius: 6px;
-            border-left: 5px solid #667eea;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--primary);
             line-height: 1.8;
-            color: #555;
+            color: var(--gray);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .job {
             margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .job:last-child {
-            border-bottom: none;
+        .job:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .job-title {
             font-weight: bold;
             font-size: 1.15em;
-            color: #222;
+            color: var(--dark);
             margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .company {
-            color: #667eea;
+            color: var(--primary);
             font-size: 0.95em;
             font-weight: 500;
             margin-bottom: 5px;
         }
         
         .date {
-            color: #999;
+            color: var(--gray);
             font-size: 0.9em;
             font-style: italic;
             margin-bottom: 10px;
@@ -139,7 +195,7 @@
         
         .job-description {
             margin-top: 10px;
-            color: #666;
+            color: var(--gray);
         }
         
         .job-description ul {
@@ -154,27 +210,28 @@
         
         .education {
             margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 4px solid #667eea;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .school {
             font-weight: bold;
             font-size: 1.1em;
-            color: #222;
+            color: var(--dark);
             margin-bottom: 5px;
         }
         
         .university {
-            color: #667eea;
+            color: var(--primary);
             font-weight: 500;
             margin-bottom: 3px;
         }
         
         .degree-detail {
-            color: #666;
+            color: var(--gray);
             font-size: 0.95em;
         }
         
@@ -185,14 +242,20 @@
         }
         
         .skill-category {
-            background: #f8f9fa;
+            background: var(--light);
             padding: 18px;
-            border-radius: 6px;
-            border-left: 4px solid #667eea;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
         }
         
         .skill-category-title {
-            color: #667eea;
+            color: var(--primary);
             font-weight: bold;
             margin-bottom: 10px;
             font-size: 1em;
@@ -205,12 +268,18 @@
         }
         
         .skill-tag {
-            background: #667eea;
+            background: var(--primary);
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
             font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background: var(--secondary);
+            transform: scale(1.05);
         }
         
         .expertise-grid {
@@ -220,28 +289,130 @@
         }
         
         .expertise-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 15px;
-            border-radius: 6px;
+            border-radius: var(--border-radius);
             font-weight: 500;
             text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .expertise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
         .certifications {
-            background: #f8f9fa;
+            background: var(--light);
             padding: 20px;
-            border-radius: 6px;
-            border-left: 4px solid #667eea;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .certifications ul {
             margin-left: 20px;
-            color: #666;
+            color: var(--gray);
         }
         
         .certifications li {
             margin-bottom: 8px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+        
+        .project-body {
+            padding: 15px;
+        }
+        
+        .project-features {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: var(--gray);
+        }
+        
+        .project-features ul {
+            margin-left: 20px;
+        }
+        
+        .project-features li {
+            margin-bottom: 5px;
+        }
+        
+        .project-tech {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: var(--accent);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--light);
+            margin-bottom: 20px;
+            overflow-x: auto;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+            padding: 10px 0;
+        }
+        
+        .nav-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .nav-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
         
         @media (max-width: 768px) {
@@ -269,6 +440,15 @@
             .skills-container {
                 grid-template-columns: 1fr;
             }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -276,34 +456,226 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="https://joomza.github.io/profile.jpg" alt="Profile Picture" class="profile-pic">
             <h1>Zain Ul-Abdeen Rana</h1>
             <div class="title">Senior Software Engineer</div>
             <div class="contact-info">
-                <span>📧 <a href="mailto:joomlogic@gmail.com">joomlogic@gmail.com</a></span>
-                <span>📱 +92-300-7478863</span>
-                <span>📍 Gujranwala, PB 52250</span>
-                <span><a href="https://www.linkedin.com/in/zain-ul-abdeen-a640aa166/" target="_blank">LinkedIn</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:joomlogic@gmail.com">joomlogic@gmail.com</a></span>
+                <span><i class="fas fa-phone"></i> +92-300-7478863</span>
+                <span><i class="fas fa-map-marker-alt"></i> Gujranwala, PB 52250</span>
+                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/zain-ul-abdeen-a640aa166/" target="_blank">LinkedIn</a></span>
             </div>
         </div>
 
         <div class="content">
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <div class="nav-tab active" data-section="about">About Me</div>
+                <div class="nav-tab" data-section="projects">Projects</div>
+                <div class="nav-tab" data-section="experience">Experience</div>
+                <div class="nav-tab" data-section="skills">Skills</div>
+            </div>
+
             <!-- Professional Summary -->
-            <div class="section">
-                <div class="section-title">Professional Summary</div>
+            <div class="section" id="about">
+                <div class="section-title"><i class="fas fa-user"></i> Professional Summary</div>
                 <div class="summary">
                     Software development professional with comprehensive background in building scalable, high-quality software applications. Known for delivering impactful projects and driving continuous improvement. Team-oriented and results-driven, with strong ability to adapt to changing requirements and priorities. Proficient in programming languages and software development methodologies.
                 </div>
             </div>
 
+            <!-- Projects -->
+            <div class="section" id="projects">
+                <div class="section-title"><i class="fas fa-code"></i> Featured Projects</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">Job Portal</div>
+                        <div class="project-body">
+                            <p>A comprehensive job portal with role-based access for Admin, Jobseeker, Employer, and Visitor.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Multi-role access control</li>
+                                    <li>Job posting and application system</li>
+                                    <li>Resume management</li>
+                                    <li>Advanced search and filtering</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Vue.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">Vehicle Manager</div>
+                        <div class="project-body">
+                            <p>A showroom management system for vehicle inventory and sales tracking.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Inventory management</li>
+                                    <li>Sales tracking</li>
+                                    <li>Customer relationship management</li>
+                                    <li>Reporting and analytics</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">CodeIgniter</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">jQuery</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">Support Ticket System</div>
+                        <div class="project-body">
+                            <p>Complete help desk solution with ticket management and customer support features.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Ticket categorization</li>
+                                    <li>Priority management</li>
+                                    <li>Knowledge base integration</li>
+                                    <li>Customer communication tools</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Socket.io</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">Learning Management System</div>
+                        <div class="project-body">
+                            <p>A comprehensive LMS for course creation, management, and student tracking.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Course creation tools</li>
+                                    <li>Student progress tracking</li>
+                                    <li>Assessment and grading</li>
+                                    <li>Multi-media content support</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">AWS S3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">Property Portal</div>
+                        <div class="project-body">
+                            <p>UK-based property portal similar to Zoopla with advanced search and listing features.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Property search and filtering</li>
+                                    <li>Agent management system</li>
+                                    <li>Map integration</li>
+                                    <li>Property valuation tools</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Google Maps API</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">WordPress Development</div>
+                        <div class="project-body">
+                            <p>Custom WordPress theme and plugin development for various client requirements.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Custom theme development</li>
+                                    <li>Plugin creation and customization</li>
+                                    <li>WooCommerce integration</li>
+                                    <li>Performance optimization</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">WooCommerce</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">CRM System</div>
+                        <div class="project-body">
+                            <p>Customer Relationship Management system with QuickBooks integration.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Contact and lead management</li>
+                                    <li>Sales pipeline tracking</li>
+                                    <li>QuickBooks integration</li>
+                                    <li>Reporting and analytics</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">QuickBooks API</span>
+                                <span class="tech-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">Funnel Builder</div>
+                        <div class="project-body">
+                            <p>Custom funnel builder with conditional logic and third-party integrations.</p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Drag-and-drop interface</li>
+                                    <li>Conditional logic on questions</li>
+                                    <li>Third-party integrations</li>
+                                    <li>Admin panel for management</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Experience -->
-            <div class="section">
-                <div class="section-title">Professional Experience</div>
+            <div class="section" id="experience">
+                <div class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
                 
                 <div class="job">
-                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="job-title">
+                        <span>Senior Software Engineer</span>
+                        <span class="date">January 2019 - November 2025</span>
+                    </div>
                     <div class="company">JITEx Complete Logistics Solutions, Remote</div>
-                    <div class="date">January 2019 - November 2025</div>
                     <div class="job-description">
                         <ul>
                             <li>Led development of scalable software solutions, enhancing system performance and user experience</li>
@@ -316,9 +688,11 @@
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="job-title">
+                        <span>Senior Software Engineer</span>
+                        <span class="date">January 2017 - September 2023</span>
+                    </div>
                     <div class="company">leadpops inc, San Diego, CA, USA</div>
-                    <div class="date">January 2017 - September 2023</div>
                     <div class="job-description">
                         <ul>
                             <li>Developed RESTful APIs to enhance integration with third-party services and tools</li>
@@ -331,9 +705,11 @@
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="job-title">
+                        <span>Senior Software Engineer</span>
+                        <span class="date">January 2014 - January 2016</span>
+                    </div>
                     <div class="company">Crucible, Lahore, Pakistan</div>
-                    <div class="date">January 2014 - January 2016</div>
                     <div class="job-description">
                         <ul>
                             <li>Built databases and table structures for web applications</li>
@@ -345,9 +721,11 @@
                 </div>
 
                 <div class="job">
-                    <div class="job-title">Software Engineer</div>
+                    <div class="job-title">
+                        <span>Software Engineer</span>
+                        <span class="date">January 2010 - January 2014</span>
+                    </div>
                     <div class="company">Buruj Solutions, Gujranwala, Pakistan</div>
-                    <div class="date">January 2010 - January 2014</div>
                     <div class="job-description">
                         <ul>
                             <li>Liaised with business management team to gather enhancement requirements and prepare design specification using UML</li>
@@ -361,7 +739,7 @@
 
             <!-- Education -->
             <div class="section">
-                <div class="section-title">Education</div>
+                <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
                 <div class="education">
                     <div class="school">BS in Computer Science</div>
                     <div class="university">Punjab University, Lahore, Pakistan</div>
@@ -370,8 +748,8 @@
             </div>
 
             <!-- Technical Skills -->
-            <div class="section">
-                <div class="section-title">Technical Skills</div>
+            <div class="section" id="skills">
+                <div class="section-title"><i class="fas fa-cogs"></i> Technical Skills</div>
                 <div class="skills-container">
                     <div class="skill-category">
                         <div class="skill-category-title">Frontend Frameworks</div>
@@ -457,7 +835,7 @@
 
             <!-- Industry Expertise -->
             <div class="section">
-                <div class="section-title">Industry Expertise</div>
+                <div class="section-title"><i class="fas fa-star"></i> Industry Expertise</div>
                 <div class="expertise-grid">
                     <div class="expertise-item">Teamwork & Communication</div>
                     <div class="expertise-item">Problem Solving</div>
@@ -472,7 +850,7 @@
 
             <!-- Certifications -->
             <div class="section">
-                <div class="section-title">Certifications</div>
+                <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
                 <div class="certifications">
                     <ul>
                         <li><strong>Linux Training</strong> - 2010</li>
@@ -482,12 +860,69 @@
 
             <!-- Languages -->
             <div class="section">
-                <div class="section-title">Languages</div>
+                <div class="section-title"><i class="fas fa-language"></i> Languages</div>
                 <div class="expertise-grid">
                     <div class="expertise-item">English - Fluent</div>
                 </div>
             </div>
         </div>
+
+        <div class="footer">
+            <p>&copy; 2023 Zain Ul-Abdeen Rana. All rights reserved.</p>
+        </div>
     </div>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Scroll to section
+                    const sectionId = tab.getAttribute('data-section');
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Highlight active section based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('.section');
+                const navTabs = document.querySelectorAll('.nav-tab');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('data-section') === currentSection) {
+                        tab.classList.add('active');
+                    }
+                });
+                
+                // If at top, highlight About section
+                if (window.scrollY < 100) {
+                    navTabs.forEach(tab => tab.classList.remove('active'));
+                    document.querySelector('.nav-tab[data-section="about"]').classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
