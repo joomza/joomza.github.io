@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: portfolio-contact
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: EMAIL_USER
+        value: joomlogic@gmail.com
+      - key: EMAIL_PASSWORD
+        value: joomyjoomy123?
+      - key: ADMIN_EMAIL
+        value: joomlogic@gmail.com
+      - key: PORT
+        value: 3000
